@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.2 - 2026-10-30
+
+- Metadata: license in `composer.json` is now `proprietary` (commercial module), no functional change.
+
 ## 1.0.1 - 2026-10-26
 
 - Fix: the "View" action column of the requests grid was empty (custom column did not write into the grid data).
