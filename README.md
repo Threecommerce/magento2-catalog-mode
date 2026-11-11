@@ -13,8 +13,10 @@
 - **Price display**: show prices, show only the recommended retail price (the `msrp` attribute, with a fallback text), or hide prices and show a configurable text (default "Price on request"). Hidden prices are also removed from cart lines and totals, mini cart, configurable/swatch JSON config, the price sort option and the layered navigation price filter.
 - **Quote mode off**: add to cart buttons, quantity, mini cart and express checkout buttons disappear; cart, checkout, multishipping and PayPal Express redirect to the home page.
 - **Quote mode on**: products can still be added to the cart, the cart shows a "Request a Quote" button and every checkout entry point leads to a quote request form (contact, optional address, message). The request is stored, the cart is emptied and customer and store are notified by email.
-- **Admin** (Sales → Quote Requests): grid with full-text search and mass delete, detail page with products and catalog prices at request time, status (New, In Progress, Quote Sent, Accepted, Rejected, Closed) and replies emailed to the customer, with history.
-- **Customer account** (My Quote Requests): list and detail with the replies received.
+- **Admin** (Sales → Quote Requests): grid with full-text search and mass delete, detail page with products and catalog prices at request time, status (New, In Progress, Quote Sent, Accepted, Converted to Order, Rejected, Expired, Closed) and replies emailed to the customer, with history.
+- **Quote expiry**: every sent quote gets a *Valid Until* date (default validity in days, editable per request); after that date the quote moves to *Expired* automatically, optionally emailing the customer.
+- **Response time and quote-to-order rate**: the first reply of the store is timestamped, the order created from a quote can be linked by its number, and a KPI table above the grid shows requests awaiting a reply, average first reply time, quotes sent, quotes turned into orders, conversion rate and expired quotes (last 30 / 90 days and all time).
+- **Customer account** (My Quote Requests): list and detail with the replies received and the quote validity date.
 - **Server-side guards** on frontend, GraphQL, REST and SOAP: adding to the cart and placing an order are refused when catalog mode applies. Orders created from the admin are never affected.
 - Layout handles for custom layout XML: `catalogmode_active`, `catalogmode_purchase_blocked`, `catalogmode_quote`, `catalogmode_price_hidden`.
 

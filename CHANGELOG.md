@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.1.0] - 2026-11-11
+
+- Quote expiry: *Valid Until* date on each request, set automatically when the status becomes *Quote Sent*
+  (new setting *Quote Validity (Days)*, default 30) and editable by hand; hourly cron sets the new *Expired*
+  status after that date, with an optional email to the customer. The date is shown in the admin, in the
+  grid, in *My Quote Requests* and in the update email.
+- Response time: the first reply of the store (status change or message to the customer) is recorded and
+  shown on the request with the elapsed time.
+- Quote to order: *Order #* field on the request (link to the order when it exists) and new
+  *Converted to Order* status, set automatically when an order number is entered.
+- KPI table above the requests grid: requests received, awaiting first reply, average first reply time,
+  quotes sent, converted to orders, quote-to-order rate and expired quotes (30 / 90 days, all time).
+- New grid columns: *Valid Until*, *Order #*, *First Reply* (hidden by default).
+
 ## 1.0.2 - 2026-10-30
 
 - Metadata: license in `composer.json` is now `proprietary` (commercial module), no functional change.
